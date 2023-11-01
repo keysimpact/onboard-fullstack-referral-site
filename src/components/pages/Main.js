@@ -4,6 +4,7 @@ import SignUp from "../auth/SignUp";
 import AuthDetails from "../AuthDetails";
 import Navbar from "../Navbar";
 import { Route, Routes } from "react-router-dom"
+import { auth } from "../../firebase";
 
 
 export default function Main() {

@@ -12,6 +12,8 @@ const SignUp = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log(userCredential)
+            setEmail("")
+            setPassword("")
         }). catch((error) =>{
             console.log(error)
         })
@@ -21,8 +23,8 @@ const SignUp = () => {
         <div className="sign-in-container">
             <form onSubmit={signUp}>
                 <h1>Sign Up</h1>
-                <input type="text" placeholder="enter your email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                <input type="password" placeholder="enter your password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <input className="email" type="text" placeholder="enter your email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                <input className="password" type="password" placeholder="enter your password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 <button type="submit"> Sign Up </button>
             </form>
         </div>
