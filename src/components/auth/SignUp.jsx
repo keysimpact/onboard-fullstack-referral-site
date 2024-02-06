@@ -2,10 +2,12 @@ import React, {useState} from "react";
 import { auth } from "../../firebase"
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
+
 const SignUp = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
 
     const signUp = (e) => {
         e.preventDefault();
@@ -19,6 +21,7 @@ const SignUp = () => {
         })
 
     }
+
     return (
         <div className="sign-in-container">
             <form onSubmit={signUp}>

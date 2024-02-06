@@ -3,13 +3,11 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
 
 export default function Home() {
-
-    window.squatchToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoidGVzdHVzZXIiLCJhY2NvdW50SWQiOiJ0ZXN0dXNlciIsImVtYWlsIjoidGVzdHVzZXJAZXhhbXBsZS5jb20ifX0.Twl17DllqZ9wBMCCA7NB6fQoIMiKoB7UKNC59uqRsUk"
-
+   
     const [authUser, setAuthUser] = useState(null)
 
     useEffect (() => {
-        const listen = onAuthStateChanged(auth, (user) => {
+        const listen =  onAuthStateChanged(auth, (user) => {
             if (user){
                 setAuthUser(user);
             } else {
@@ -23,6 +21,10 @@ export default function Home() {
     }, []);
 
     console.log(authUser)
+    setTimeout(() => {
+        // console.log(authUser.accessToken)
+    })
+    window.squatchTenant = "test_afomyz9sbbao3";
 
   return (
     <>
